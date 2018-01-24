@@ -12,7 +12,7 @@
           bot.startConversation(message, function(err, convo) {
             convo.addQuestion('Hi friend! What is your name?',function(response_name,convo) {
 
-              convo.say('Hi ' + response_name + '! How are you feeling today?');
+              convo.say('Hi ' + response_name.text + '! How are you feeling today?');
               convo.next();
 
             },{},'default');

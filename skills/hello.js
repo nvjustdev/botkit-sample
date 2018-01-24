@@ -1,18 +1,13 @@
 /*
 
-WHAT IS THIS?
-
-This module demonstrates simple uses of Botkit's `hears` handler functions.
-
-In these examples, Botkit is configured to listen for certain phrases, and then
-respond immediately with a single line response.
+This module handles the hello message.
 
 */
 
 module.exports = function(controller) {
 
   controller.hears(['^hello$'], 'direct_message,direct_mention', function(bot, message) {
-        bot.reply(message, "Hi there, you're on workspace: " + message.team);
+        bot.reply(message, "Hi there, how are you feeling today?");
     });
 
 };

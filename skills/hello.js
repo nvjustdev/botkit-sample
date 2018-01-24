@@ -10,9 +10,9 @@
           // bot.reply(message, "Hi there, how are you feeling today?");
           console.log(message);
           bot.startConversation(message, function(err, convo) {
-            convo.addQuestion('Hi  @'+ message.user +'! How are you feeling today?',function(response,convo) {
+            convo.addQuestion('Hi friend! What is your name?',function(response_name,convo) {
 
-              convo.say('You said: ' + response.text);
+              convo.say('Hi ' + response_name + '! How are you feeling today?');
               convo.next();
 
             },{},'default');

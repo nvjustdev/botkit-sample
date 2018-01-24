@@ -86,6 +86,20 @@ var controller = Botkit.slackbot(bot_options);
 
 controller.startTicking();
 
+//<--- Nirmala code start
+
+var bot = controller.spawn(
+	{
+		token:process.env.token
+	}
+).startRTM();
+
+controller.hears('lunch','direct_message,direct_mention',function(bot,message) {
+    bot.reply(message,"WOOO~ Let's eat!!");
+});
+
+//<--- Nirmala code end
+
 // Set up an Express-powered webserver to expose oauth and webhook endpoints
 var webserver = require(__dirname + '/components/express_webserver.js')(controller);
 

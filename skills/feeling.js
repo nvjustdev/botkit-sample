@@ -16,6 +16,7 @@ module.exports = function(controller) {
         bot.startConversation(message, function(err, convo) {
             convo.ask('What is your feeling right now?', function(response, convo) {
 
+                console.log("Response for feeling = " + response);
                 convo.say('You said that you are feeling ' + response.text);
                 convo.next();
 

@@ -27,10 +27,10 @@ module.exports = function(controller) {
         stats.convos++;
     });
 
-	controller.hears(['^hello$'], 'direct_message,direct_mention', function(bot, message) {
-bot.reply(message, "Oh Hello");
-        bot.reply(message, "Hi there, you're on workspace: " + message.team);
-    });
+// 	controller.hears(['^hello$'], 'direct_message,direct_mention', function(bot, message) {
+// bot.reply(message, "Oh Hello");
+//         bot.reply(message, "Hi there, you're on workspace: " + message.team);
+//     });
 
 
     controller.hears(['^uptime','^debug'], 'direct_message,direct_mention', function(bot, message) {

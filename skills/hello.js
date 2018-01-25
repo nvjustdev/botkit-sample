@@ -17,7 +17,7 @@
               convo.ask('Hi ' + response_name.text + '!. What is your feeling right now?', function(response, convo) {
 
                   console.log("Response for feeling = " + response);
-                  convo.say('You said that you are feeling ' + response.text);
+                  convo.say('Did you say that you are feeling ' + response.text +'?');
                   convo.next();
 
               });

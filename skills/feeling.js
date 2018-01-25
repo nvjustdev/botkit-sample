@@ -11,14 +11,33 @@ through the conversation are chosen based on the user's response.
 
 module.exports = function(controller) {
 
-    controller.hears(['feel'], 'direct_message,direct_mention', function(bot, message) {
+    controller.hears(['Hi'], 'direct_message,direct_mention', function(bot, message) {
 
         bot.startConversation(message, function(err, convo) {
-            convo.ask('What is your feeling right now?', function(response, convo) {
+            convo.ask('Hi there. What is your feeling right now?', function(response, convo) {
 
                 console.log("Response for feeling = " + response);
-                convo.say('You said that you are feeling ' + response.text);
+                // convo.say('You said that you are feeling ' + response.text);
                 convo.next();
+
+                // create a path where neither option was matched
+                // this message has an action field, which directs botkit to go back to the `default` thread after sending this message.
+                convo.addMessage({
+                    text: 'Sorry I did not understand. Say `yes` or `no`',
+                    action: 'default',
+                },'bad_response');
+
+                // create a path for when a user says ANGER
+                convo.addMessage({
+                        text: 'How wonderful.',
+                },'yes_thread');
+
+                // create a path for when a user says NO
+                // mark the conversation as unsuccessful at the end
+                convo.addMessage({
+                    text: 'Cheese! It is not for everyone.',
+                    action: 'stop', // this marks the converation as unsuccessful
+                },'no_thread');
 
             });
         });

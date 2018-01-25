@@ -24,7 +24,7 @@
                       // create a path for when a user says YES
                       convo.addMessage({
                               text: 'Oh no! What made you rage?!',
-                      },'yes_thread');
+                      },'angry_thread');
 
                       // create a path for when a user says NO
                       // mark the conversation as unsuccessful at the end

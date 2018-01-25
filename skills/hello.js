@@ -11,18 +11,18 @@
           bot.startConversation(message, function(err, convo) {
             convo.addQuestion('Hi friend! What is your name?',function(response_name,convo) {
 
-              // convo.say('Hi ' + response_name.text + '! How are you feeling today?');
-              // convo.next();
+              convo.say('Hi ' + response_name.text + '! How are you feeling today?');
+              convo.next();
 
               console.log("name " + response_name.text);
 
-              convo.ask('Hi ' + response_name.text + '!. What is your feeling right now?', function(response, convo) {
-
-                  console.log("Response for feeling = " + response);
-                  convo.say('Did you say that you are feeling ' + response.text +'?');
-                  convo.next();
-
-              });
+              // convo.ask('Hi ' + response_name.text + '!. What is your feeling right now?', function(response, convo) {
+              //
+              //     console.log("Response for feeling = " + response);
+              //     convo.say('Did you say that you are feeling ' + response.text +'?');
+              //     convo.next();
+              //
+              // });
 
             },{},'default');
           });

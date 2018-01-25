@@ -41,7 +41,7 @@
                       },'bad_response');
 
                       // Create a yes/no question in the default thread...
-                      convo.ask('Do you like cheese?', [
+                      convo.ask('How are you feeling?', [
                           {
                               pattern:  ['^angry$'],
                               callback: function(response, convo) {
@@ -73,7 +73,7 @@
                           }
 
                       });
-                  }
+                  });
               });
 
             },{},'default');

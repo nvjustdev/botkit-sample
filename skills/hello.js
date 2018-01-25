@@ -16,7 +16,7 @@
 
               console.log("name " + response_name.text);
 
-              bot.startConversation(response_name, function(err, convo) {
+              // bot.startConversation(response_name, function(err, convo) {
                   convo.say('Hi ' + response_name.text + '!');
 
                   convo.ask('How are you feeling today?', function(feeling_response, convo) {
@@ -25,7 +25,7 @@
                       convo.next();
 
                   });
-              });
+              // });
 
             },{},'default');
           });

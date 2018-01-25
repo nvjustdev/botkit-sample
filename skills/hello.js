@@ -14,6 +14,8 @@
               // convo.say('Hi ' + response_name.text + '! How are you feeling today?');
               // convo.next();
 
+              console.log("name " + response_name.text);
+
               convo.ask('Hi ' + response_name.text + '!. What is your feeling right now?', function(response, convo) {
 
                   console.log("Response for feeling = " + response);

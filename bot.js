@@ -94,6 +94,14 @@ var bot = controller.spawn(
 	}
 ).startRTM();
 
+var watsonMiddleware = require('botkit-middleware-watson')({
+  username: "20c01b75-60e5-4d9c-9ad8-0bd8f820c8d6",
+  password: "XoYEeYnUddSP",
+  workspace_id: "8d1f45b8-f2fc-4bab-991d-b5b45e8d791a",
+  version_date: '2017-05-26',
+  minimum_confidence: 0.50, // (Optional) Default is 0.75
+});
+
 controller.hears('lunch','direct_message,direct_mention',function(bot,message) {
     bot.reply(message,"WOOO~ Let's eat!!");
 });

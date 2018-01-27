@@ -1,7 +1,7 @@
 {
-  "name": "botkit-starter-slack",
+  "name": "botkit-sample",
   "version": "0.0.2",
-  "description": "A starter kit for building a custom Slack bot with Botkit Studio",
+  "description": "Chatbot sample",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
@@ -23,17 +23,17 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/howdyai/botkit-starter-slack.git"
+    "url": "https://github.com/nvjustdev/botkit-sample.git"
   },
   "bugs": {
-    "url": "https://github.com/howdyai/botkit-starter-slack/issues"
+    "url": "https://github.com/nvjustdev/botkit-sample/issues"
   },
-  "homepage": "https://github.com/howdyai/botkit-starter-slack",
+  "homepage": "https://github.com/nvjustdev/botkit-sample",
   "keywords": [
     "bots",
     "chatbots",
     "slack"
   ],
-  "author": "ben@howdy.ai",
+  "author": "nirmala.vjram@gmail.com",
   "license": "ISC"
 }

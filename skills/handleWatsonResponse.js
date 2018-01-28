@@ -50,16 +50,16 @@ module.exports = function () {
                 invokeAction(message.watsonData.output, bot, message);
             }
             else {
-                if (customSlackMessage == true) {
+                // if (customSlackMessage == true) {
                     bot.reply(message, message.watsonData.output.context.slack);
-                } else {
-                    if (customFacebookMessage == true) {
-                        bot.reply(message, message.watsonData.output.context.facebook);
-                    }
-                    else {
-                        bot.reply(message, message.watsonData.output.text[0]);
-                    }
-                }
+                // } else {
+                //     if (customFacebookMessage == true) {
+                //         bot.reply(message, message.watsonData.output.context.facebook);
+                //     }
+                //     else {
+                //         bot.reply(message, message.watsonData.output.text[0]);
+                //     }
+                // }
             }
         }
     }

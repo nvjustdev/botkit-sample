@@ -50,7 +50,15 @@ module.exports = function () {
                 invokeAction(message.watsonData.output, bot, message);
             }
             else {
-                console.log("2. client type = " + clientType);
+                //Check the client type
+                if (clientType == 'slack') {
+                    customSlackMessage = true;
+                } else {
+                  if (clientType == 'facebook') {
+                      customFacebookMessage = true;
+                  }
+                }
+
                 if (customSlackMessage == true) {
                     bot.reply(message, message.watsonData.output.context.slack);
                 } else {

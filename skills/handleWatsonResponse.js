@@ -26,6 +26,7 @@ module.exports = function () {
                 if (message.watsonData.output) {
                     if (message.watsonData.output.context) {
                         if (message.watsonData.output.context.slack) {
+                          console.log("client type = " + clientType);
                             if (clientType == 'slack') {
                                 customSlackMessage = true;
                             }

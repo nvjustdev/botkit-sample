@@ -77,6 +77,8 @@ module.exports = function () {
             if (message.watsonData) {
               if (message.watsonData.output) {
                 if (message.watsonData.output.text) {
+                  console.log("message = %j", message);
+                  console.log("message.text = %j", message.watsonData.output.text);
                   bot.reply(message, message.watsonData.output.text[0]);
                 }
               }

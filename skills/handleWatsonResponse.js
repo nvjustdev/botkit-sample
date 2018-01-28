@@ -42,24 +42,22 @@ module.exports = function () {
                         if (message.watsonData.output.context.action) {
                             actionToBeInvoked = true;
                         }
-
-
-                        if (actionToBeInvoked == true) {
-                            bot.reply(message, message.watsonData.output.text.join('\n'));
-                            invokeAction(message.watsonData.output, bot, message);
-                        }
-                        else {
-                            // if (customSlackMessage == true) {
-                                bot.reply(message, message.watsonData.output.context.slack);
-                            // } else {
-                            //     if (customFacebookMessage == true) {
-                            //         bot.reply(message, message.watsonData.output.context.facebook);
-                            //     }
-                            //     else {
-                            //         bot.reply(message, message.watsonData.output.text[0]);
-                            //     }
-                            // }
-                        }
+                    }
+                }
+            }
+            if (actionToBeInvoked == true) {
+                bot.reply(message, message.watsonData.output.text.join('\n'));
+                invokeAction(message.watsonData.output, bot, message);
+            }
+            else {
+                if (customSlackMessage == true) {
+                    bot.reply(message, message.watsonData.output.context.slack);
+                } else {
+                    if (customFacebookMessage == true) {
+                        bot.reply(message, message.watsonData.output.context.facebook);
+                    }
+                    else {
+                        bot.reply(message, message.watsonData.output.text[0]);
                     }
                 }
             }

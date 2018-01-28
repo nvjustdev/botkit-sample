@@ -16,11 +16,12 @@
 
   module.exports = function(controller) {
 
-    controller.hears(['^hello$'], 'direct_message,direct_mention', function(bot, message) {
-          console.log("message = " + message);
+    //controller.hears(['^hello$'], 'direct_message,direct_mention', function(bot, message) {
+    controller.hears(['.*'], 'direct_message,direct_mention,mention', function(bot, message) {
+          console.log("message = " + message.text);
 
           middleware.interpret(bot, message, function (err) {
-            console.log("middleware to interpret = " + message);
+            console.log("middleware to interpret = " + message.text);
               if (!err) {
                   sharedCode.handleWatsonResponse(bot, message, 'slack');
               }

@@ -29,7 +29,7 @@ module.exports = function () {
                 if (message.watsonData.output) {
                     if (message.watsonData.output.context) {
                         if (message.watsonData.output.context.slack) {
-                          console.log("client type = " + clientType);
+                          console.log("1. client type = " + clientType);
                             if (clientType == 'slack') {
                                 customSlackMessage = true;
                             }
@@ -50,7 +50,7 @@ module.exports = function () {
                 invokeAction(message.watsonData.output, bot, message);
             }
             else {
-                console.log("client type = " + clientType);
+                console.log("2. client type = " + clientType);
                 if (customSlackMessage == true) {
                     bot.reply(message, message.watsonData.output.context.slack);
                 } else {

@@ -22,6 +22,9 @@ module.exports = function () {
             let customSlackMessage = false;
             let customFacebookMessage = false;
             let actionToBeInvoked = false;
+
+            console.log("Watson Data %j", message.watsonData);
+
             if (message.watsonData) {
                 if (message.watsonData.output) {
                     if (message.watsonData.output.context) {
@@ -47,6 +50,7 @@ module.exports = function () {
                 invokeAction(message.watsonData.output, bot, message);
             }
             else {
+                console.log("client type = " + clientType);
                 if (customSlackMessage == true) {
                     bot.reply(message, message.watsonData.output.context.slack);
                 } else {

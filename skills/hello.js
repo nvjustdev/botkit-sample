@@ -4,6 +4,8 @@
 
   */
 
+  var sharedCode = require('./handleWatsonResponse.js')();
+
   var middleware = require('botkit-middleware-watson')({
     username: "20c01b75-60e5-4d9c-9ad8-0bd8f820c8d6",
     password: "XoYEeYnUddSP",
@@ -18,7 +20,7 @@
           console.log("message = " + message);
 
           middleware.interpret(bot, message, function (err) {
-            console.log("middleware to interpret");
+            console.log("middleware to interpret = " + message);
               if (!err) {
                   sharedCode.handleWatsonResponse(bot, message, 'slack');
               }

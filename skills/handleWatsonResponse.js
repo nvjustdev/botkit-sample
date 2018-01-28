@@ -76,7 +76,7 @@ module.exports = function () {
           else {
             if (message.watsonData) {
               if (message.watsonData.output) {
-                if (message.watsonData.output.text) {
+                if (message.watsonData.output.text && message.watsonData.output.text.length > 0) {
                   console.log("message = %j", message);
                   console.log("message.text = %j", message.watsonData.output.text);
                   bot.reply(message, message.watsonData.output.text[0]);

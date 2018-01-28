@@ -51,6 +51,7 @@ module.exports = function () {
       }
       else {
         if (customSlackMessage == true) {
+          console.log("Entering here");
           if (message.watsonData) {
             if (message.watsonData.output) {
               if (message.watsonData.output.context) {
@@ -62,10 +63,24 @@ module.exports = function () {
           }
         } else {
           if (customFacebookMessage == true) {
-            bot.reply(message, message.watsonData.output.context.facebook);
+            if (message.watsonData) {
+              if (message.watsonData.output) {
+                if (message.watsonData.output.context) {
+                  if (message.watsonData.output.context.facebook) {
+                    bot.reply(message, message.watsonData.output.context.facebook);
+                  }
+                }
+              }
+            }
           }
           else {
-            bot.reply(message, message.watsonData.output.text[0]);
+            if (message.watsonData) {
+              if (message.watsonData.output) {
+                if (message.watsonData.output.text) {
+                  bot.reply(message, message.watsonData.output.text[0]);
+                }
+              }
+            }
           }
         }
       }
